@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .card-container{
+            display: inline-block;
+        }
+
+        .card{
+            font-size: 18px;
+            gap: 5px;
+            display: flex;
+            justify-content: left;
+            justify-content: left;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tarefas</h1>
+
+    <div class="cadastrar">
+        <form th:action="@{/add}" method="post">
+            <input type="text" name="adicionar">
+            <button type="submit">adicionar</button>
+        </form>
+    </div>
+
+    <div class="card-container">
+        <div th:each="tarefa : ${lista}" class="card">
+            <ul>
+                <li>
+                    <span th:text="${tarefa}"></span>
+                    <a href="#">done</a>
+                    <a href="#">delete</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
