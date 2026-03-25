@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .card-container{
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .card{
+            width: 33.33%;
+            height: 80px;
+            border: solid black 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Home page</h1>
+
+    <span>Turma: </span>
+    <p th:text="${turma}"></p>
+    <br>
+    <span>Ano:</span>
+    <p th:text="${ano}"></p>
+    <br>
+
+    <h1>Pessoas</h1>
+    <div class="card-container">
+        <div th:each="nome : ${lista}" class="card">
+            <p th:text="${nome}"></p>
+        </div>
+    </div>
+</body>
+</html>
