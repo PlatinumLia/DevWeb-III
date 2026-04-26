@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ExercDoisApplication<exerc_dois>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.exerc_dois.ExercDoisApplication",
+            "projectName": "exerc_dois",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

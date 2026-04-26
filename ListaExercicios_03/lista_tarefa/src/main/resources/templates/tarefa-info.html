@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Informações da tarefa</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container p-2 mt-5">
+        <table class="table table-striped">
+            <p class="h1"> Informações da tarefa </p>
+            
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Data</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td th:text="${tarefa.id}">ID</td>
+                    <td th:text="${tarefa.titulo}">Título</td>
+                    <td th:text="${tarefa.descricao}"></td>
+                    <td th:text="${tarefa.estado.descricao}"></td>
+                    <td th:text="${tarefa.data}"></td>
+                </tr>
+            </table>
+        </tbody>
+
+        <div>
+            <a class="btn btn-secondary" th:href="@{/tarefas}">Voltar</a>
+        </div>
+    </div>
+</body>
+</html>
