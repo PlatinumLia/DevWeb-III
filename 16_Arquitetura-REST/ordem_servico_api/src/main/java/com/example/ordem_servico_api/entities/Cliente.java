@@ -16,30 +16,33 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity 
 @Table(name = "clientes")
 @Data
-@NoArgsConstructor
-public class Cliente{
+@NoArgsConstructor // Informa para o spring criar a entidade com um construtor vazio
+public class Cliente {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "O nome é obrigatório.")
+    @NotBlank(message = "O nome é obrigatorio!")
     @Column(nullable = false)
     private String nome;
-    
-    @NotBlank
-    @Email(message = "E-mail inválido.")
-    private String email;
-    
-    private String telefone;
 
+    @NotBlank(message = "O E-mail é obrigatorio!")
+    @Column(nullable = false)
+    @Email(message = "E-mail invalido!") // Valida o campo para serguir o formato de email
+    private String email;
+
+    private String telefone;
+    
     private Boolean ativo;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
-    
+
     @UpdateTimestamp
     private LocalDateTime updatedAt;
+  
 }
