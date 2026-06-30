@@ -3,11 +3,13 @@ package com.example.ordem_servico_api.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.ordem_servico_api.entities.OrdemServico;
 import com.example.ordem_servico_api.exceptions.ResourceNotFoundException;
 import com.example.ordem_servico_api.repositories.OrdemServicoRepository;
 
+@Service
 public class OrdemServicoService {
     @Autowired
     OrdemServicoRepository ordemServicoRepository;
